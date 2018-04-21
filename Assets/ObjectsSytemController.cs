@@ -4,33 +4,71 @@ using UnityEngine;
 
 public class ObjectsSytemController : MonoBehaviour {
 
-    public GameObject Object1;
+    private GameObject FlashlightSPRITE;
     public float FlashlightTime = 2.0f;
-    private float timeElapsed = 0.0f;
-    public GameObject Object2;
 
-    public bool BOOLObject1 = false;
-    public bool BOOLObject2 = false;
+    private GameObject TrapSPRITE;
+    public float TrapDelayTime = 10.0f;
+
+    private float FlashlightTimeElapsed = 0.0f;
+    private float TrapTimeElapsed = -10.0f;
+
+    public bool BOOL_Flashlight = false;
+    public bool BOOL_Trap = false;
 
     // Use this for initialization
     void Start ()
     {
-        BOOLObject1 = false;
-        BOOLObject2 = false;
+        FlashlightSPRITE = GameObject.Find("FlashlightSPRITE");
+        TrapSPRITE = GameObject.Find("TrapSPRITE");
 
-        Object1.SetActive(false);
-        Object2.SetActive(false);
+        BOOL_Flashlight = false;
+        BOOL_Trap = false;
+
+        FlashlightSPRITE.SetActive(false);
+        TrapSPRITE.SetActive(false);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if ( BOOLObject1 )
+        if ( BOOL_Flashlight )
         {
-            if ( Time.time - timeElapsed >= FlashlightTime )
+            if ( Time.time - TrapTimeElapsed >= FlashlightTime )
             {
                 Debug.Log("zgasła.");
-                Object1.SetActive(false);
+                FlashlightSPRITE.SetActive(false);
+                BOOL_Flashlight = false;
+            }
+        }
+        
+        if ( BOOL_Trap )
+        {
+            if ( Input.GetKeyDown(KeyCode.E) )
+            {
+                Debug.Log("stawiasz pułapkę.");
+                TrapTimeElapsed = Time.time;
+            }
+
+            if ( TrapTimeElapsed > -10.0f )
+            {
+                Debug.Log("posszło");
+                if ( Time.time - TrapTimeElapsed >= TrapDelayTime )
+                {
+                    float x = Random.Range(0f, 2.0f);
+                    if ( x > 1.0f )
+                    {
+                        Debug.Log("ałaaaa!");
+                    }
+                    else
+                    {
+                        Debug.Log("pułapka nie poskutkowała.");
+                    }
+
+                    BOOL_Trap = false;
+                    TrapSPRITE.SetActive(false);
+                    TrapTimeElapsed = -20.0f;
+                }
             }
         }
     }
@@ -39,10 +77,16 @@ public class ObjectsSytemController : MonoBehaviour {
     {
         if ( number == 1 )
         {
-            BOOLObject1 = true;
+            BOOL_Flashlight = true;
             Debug.Log("masz przedmiot.latarka świeci");
-            Object1.SetActive(true);
-            timeElapsed = Time.time;
+            FlashlightSPRITE.SetActive(true);
+            TrapTimeElapsed = Time.time;
+        }
+        else if ( number == 2 )
+        {
+            BOOL_Trap = true;
+            Debug.Log("masz pułapkę. użyj E");
+            TrapSPRITE.SetActive(true);
         }
     }
 }
