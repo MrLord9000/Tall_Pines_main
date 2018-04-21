@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Countdown_timer : MonoBehaviour {
 
-    public float MainGameTimer = 25;
+    public float MainGameTimer = 99;
     public Text timerText;
 
     public GameObject GameOver;
@@ -23,7 +23,15 @@ public class Countdown_timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        MainGameTimer -= Time.deltaTime;
+
+        //if(MainGameTimer>=50)
+        
+        //else if(MainGameTimer>=50)
+
+        if(MainGameTimer<=0)
+            GameOver.SetActive(true);
+
+        MainGameTimer -= Mult*Time.deltaTime;
         timerText.text = MainGameTimer.ToString("f0");
 	}
 
@@ -37,23 +45,3 @@ public class Countdown_timer : MonoBehaviour {
         
     }
 }
-
-    public GameObject GameOver;
-
-    private float Mult;
-
-    // Use this for initialization
-    void Start () {
-
-        Mult = 1;
-
-
-    public void SetTimeMultiplication(float Multiplicator)
-    {
-        Mult = Multiplicator;
-    }
-
-
-
-
-      

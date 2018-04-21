@@ -20,8 +20,8 @@ public class ObjectsSytemController : MonoBehaviour {
 
     private bool BOOL_Flashlight = false;
     private bool BOOL_Trap = false;
-
-    private GameObject InteractableObject;
+    private bool BOOL_Axe = false;
+    private bool BOOL_Machete = false;
 
     // Use this for initialization
     void Start ()
@@ -42,7 +42,7 @@ public class ObjectsSytemController : MonoBehaviour {
     {
         if ( BOOL_Flashlight )
         {
-            if ( Time.time - FlashlightTimeElapsed >= FlashlightTime )
+            if ( Time.time - TrapTimeElapsed >= FlashlightTime )
             {
                 Debug.Log("zgasła.");
                 FlashlightSPRITE.SetActive(false);
@@ -88,8 +88,8 @@ public class ObjectsSytemController : MonoBehaviour {
             BOOL_Flashlight = true;
             Debug.Log("masz przedmiot.latarka świeci");
             FlashlightSPRITE.SetActive(true);
-            FlashlightTimeElapsed = Time.time;
-            GameObject.Find("Canvas").GetComponentInChildren<Countdown_timer>().SetTimeMultiplication(0.9f);
+            TrapTimeElapsed = Time.time;
+            GameObject.Find("Canvas").GetComponent<Countdown_timer>().SetTimeMultiplication(0.9f);
         }
         else if ( number == 2 )
         {
@@ -100,29 +100,13 @@ public class ObjectsSytemController : MonoBehaviour {
         else if ( number == 3 )
         {
             Debug.Log("podniesłeś sikire");
-            InteractableObject = GameObject.Find("LyingTree");
-            if (InteractableObject == null)
-            {
-                Debug.Log("null");
-            }
-            else
-            {
-                InteractableObject.GetComponent<InteractionWithObjectScript>().GotTheRightObject(3);
-            }
+            GameObject.Find("LyingTree").GetComponent<InteractionWithObjectScript>().GotTheRightObject(3);
             AxeSPRITE.SetActive(true);
         }
         else if (number == 4)
         {
             Debug.Log("podniesłeś meszete");
-            InteractableObject = GameObject.Find("Bushes");
-            if ( InteractableObject == null )
-            {
-                Debug.Log("null");
-            }
-            else
-            {
-                InteractableObject.GetComponent<InteractionWithObjectScript>().GotTheRightObject(4);
-            }
+            GameObject.Find("Bushes").GetComponent<InteractionWithObjectScript>().GotTheRightObject(4);
             MacheteSPRITE.SetActive(true);
         }
     }
