@@ -11,6 +11,7 @@ public class Countdown_timer : MonoBehaviour {
     public GameObject GameOver;
 
     private float Mult;
+
     private int FramesCount;
 
     // Use this for initialization
@@ -37,5 +38,10 @@ public class Countdown_timer : MonoBehaviour {
     public void SetTimeMultiplication(float Multiplicator)
     {
         Mult = Multiplicator;
+    }
+
+    void LateUpdate()
+    {
+        
     }
 }
