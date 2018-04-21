@@ -10,12 +10,14 @@ public class Countdown_timer : MonoBehaviour {
 
     public GameObject GameOver;
 
+    private float Mult;
     private int FramesCount;
 
     // Use this for initialization
     void Start () {
         timerText = GetComponent<Text>();
         FramesCount = 0;
+        Mult = 1;
 	}
 	
 	// Update is called once per frame
@@ -28,7 +30,12 @@ public class Countdown_timer : MonoBehaviour {
         if(MainGameTimer<=0)
             GameOver.SetActive(true);
 
-        MainGameTimer -= Time.deltaTime;
+        MainGameTimer -= Mult*Time.deltaTime;
         timerText.text = MainGameTimer.ToString("f0");
 	}
+
+    public void SetTimeMultiplication(float Multiplicator)
+    {
+        Mult = Multiplicator;
+    }
 }
