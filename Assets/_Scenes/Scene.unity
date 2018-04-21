@@ -272,6 +272,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 224620425800402488, guid: c0698ba2984c70b449baa4c86b8e37bc,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0698ba2984c70b449baa4c86b8e37bc, type: 2}
   m_IsPrefabParent: 0
@@ -792,7 +797,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1565861663}
-  - {fileID: 99253046}
   m_Father: {fileID: 1938898941}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1552,6 +1556,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114523373340680914, guid: b1acf6a07b5cd44409c0c6259a4c1118,
+        type: 2}
+      propertyPath: ObjectNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114652154412097702, guid: b1acf6a07b5cd44409c0c6259a4c1118,
+        type: 2}
+      propertyPath: ObjectNumber
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1acf6a07b5cd44409c0c6259a4c1118, type: 2}
