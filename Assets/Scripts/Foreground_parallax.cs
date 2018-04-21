@@ -22,7 +22,7 @@ public class Foreground_parallax : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-       x = Input.GetAxis("Mouse X");
+        x = Input.GetAxis("Mouse X");
         y = Input.GetAxis("Mouse Y");
         MouseMov = new Vector3(-x * XParallaxMultipler, -y * YParallaxMultipler, 0);
 
