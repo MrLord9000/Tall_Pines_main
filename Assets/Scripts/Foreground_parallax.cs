@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Foreground_parallax : MonoBehaviour {
 
-    private Vector3 mousePos;
-	
+    private Vector3 MouseMov;
 
-	// Update is called once per frame
-	void Update () {
-        mousePos = Input.mousePosition;
-	}
+    private void Start()
+    {
+        float x=0;
+        float y=0;
+        float z;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+       // x = Input.GetAxis("Mouse X");
+
+
+    }
 }

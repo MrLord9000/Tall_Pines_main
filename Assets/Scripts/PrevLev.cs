@@ -16,20 +16,23 @@ public class PrevLev : MonoBehaviour {
 
     private GameObject Time;
 
-    
+    void Start()
+    {
+        Time = GameObject.Find("Canvas");
+    }
 
-        void OnMouseDown()
+    void OnMouseDown()
         {
-
-              currentSprite.sprite = buttonPressed;
-              Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 15;
-              Debug.Log("Naciśnięto");
+        Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 15;
+        currentSprite.sprite = buttonPressed;
+                 
+        Debug.Log("Naciśnięto");
         }
 
         void OnMouseUp()
         {
-        prevScene.SetActive(true);
         currentScene.SetActive(false);
+        prevScene.SetActive(true);
         }
 
         void OnMouseEnter()

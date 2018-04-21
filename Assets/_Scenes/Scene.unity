@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21963b7ed600704498e2c0eebd34864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainGameTimer: 99
+  MainGameTimer: 25
   timerText: {fileID: 63182099}
   GameOver: {fileID: 1453481998}
 --- !u!114 &63182099
@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 322512729}
   - component: {fileID: 322512727}
   - component: {fileID: 322512730}
-  - component: {fileID: 322512728}
   m_Layer: 0
   m_Name: Prev
   m_TagString: Untagged
@@ -290,20 +289,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.38795662, y: 0.21494246}
   m_EdgeRadius: 0
---- !u!114 &322512728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 322512725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextLevName: {fileID: 0}
-  ThisLevName: {fileID: 0}
-  Dodatnie: 0
 --- !u!212 &322512729
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -553,9 +538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevName: {fileID: 1792214158}
-  ThisLevName: {fileID: 205047899}
-  Dodatnie: 0
+  NextLevName: {fileID: 205047899}
+  ThisLevName: {fileID: 1792214158}
+  Dodatnie: 1
 --- !u!212 &889493348
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1381,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevName: {fileID: 0}
   ThisLevName: {fileID: 0}
-  Dodatnie: 0
+  Dodatnie: 1
 --- !u!212 &1637475239
 SpriteRenderer:
   m_ObjectHideFlags: 0
