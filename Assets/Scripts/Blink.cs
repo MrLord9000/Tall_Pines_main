@@ -24,6 +24,7 @@ public class Blink : MonoBehaviour {
         {
             if (change) change = false;
             else change = true;
+            
         }
     }
 }
