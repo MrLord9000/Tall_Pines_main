@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277125360085290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4162521, y: -0.024958074, z: -0.23828125}
+  m_LocalPosition: {x: 13.816286, y: -6.9050713, z: -0.23828125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224448010984760444}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree_Bush: 1
-  rend: {fileID: 0}
+  rend: {fileID: 212673258507648034}
 --- !u!114 &114599831768903080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree_Bush: 2
-  rend: {fileID: 0}
+  rend: {fileID: 212125342109662194}
 --- !u!212 &212125342109662194
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -395,7 +395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.56, y: 3.84}
+  m_AnchoredPosition: {x: -22.77, y: 3.78}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224506364455529262
@@ -432,6 +432,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.23, y: 3.49}
+  m_AnchoredPosition: {x: -6.02, y: 4.93}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

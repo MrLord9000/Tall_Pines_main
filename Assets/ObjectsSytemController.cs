@@ -89,7 +89,7 @@ public class ObjectsSytemController : MonoBehaviour {
             Debug.Log("masz przedmiot.latarka świeci");
             FlashlightSPRITE.SetActive(true);
             TrapTimeElapsed = Time.time;
-            GameObject.Find("Canvas").GetComponent<Countdown_timer>().SetTimeMultiplication(0.9f);
+            GameObject.Find("Canvas").GetComponentInChildren<Countdown_timer>().SetTimeMultiplication(0.9f);
         }
         else if ( number == 2 )
         {
