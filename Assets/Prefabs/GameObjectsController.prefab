@@ -51,8 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c2972fc5f162e4e98ff7f2d74dcc80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Object1: {fileID: 0}
   FlashlightTime: 2
-  Object2: {fileID: 0}
-  BOOLObject1: 0
-  BOOLObject2: 0
+  TrapDelayTime: 10
+  BOOL_Flashlight: 0
+  BOOL_Trap: 0
