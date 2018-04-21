@@ -53,5 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlashlightTime: 2
   TrapDelayTime: 10
-  BOOL_Flashlight: 0
-  BOOL_Trap: 0
+  LimitOfUsesAxe: 2

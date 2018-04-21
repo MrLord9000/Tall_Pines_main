@@ -10,23 +10,31 @@ public class ObjectsSytemController : MonoBehaviour {
     private GameObject TrapSPRITE;
     public float TrapDelayTime = 10.0f;
 
+    private GameObject AxeSPRITE;
+    public int LimitOfUsesAxe = 2;
+
+    private GameObject MacheteSPRITE;
+
     private float FlashlightTimeElapsed = 0.0f;
     private float TrapTimeElapsed = -10.0f;
 
-    public bool BOOL_Flashlight = false;
-    public bool BOOL_Trap = false;
+    private bool BOOL_Flashlight = false;
+    private bool BOOL_Trap = false;
+    private bool BOOL_Axe = false;
+    private bool BOOL_Machete = false;
 
     // Use this for initialization
     void Start ()
     {
         FlashlightSPRITE = GameObject.Find("FlashlightSPRITE");
         TrapSPRITE = GameObject.Find("TrapSPRITE");
-
-        BOOL_Flashlight = false;
-        BOOL_Trap = false;
+        AxeSPRITE = GameObject.Find("AxeSPRITE");
+        MacheteSPRITE = GameObject.Find("MacheteSPRITE");
 
         FlashlightSPRITE.SetActive(false);
         TrapSPRITE.SetActive(false);
+        AxeSPRITE.SetActive(false);
+        MacheteSPRITE.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -81,12 +89,25 @@ public class ObjectsSytemController : MonoBehaviour {
             Debug.Log("masz przedmiot.latarka świeci");
             FlashlightSPRITE.SetActive(true);
             TrapTimeElapsed = Time.time;
+            GameObject.Find("Canvas").GetComponent<Countdown_timer>().SetTimeMultiplication(0.9f);
         }
         else if ( number == 2 )
         {
             BOOL_Trap = true;
             Debug.Log("masz pułapkę. użyj E");
             TrapSPRITE.SetActive(true);
+        }
+        else if ( number == 3 )
+        {
+            Debug.Log("podniesłeś sikire");
+            GameObject.Find("LyingTree").GetComponent<InteractionWithObjectScript>().GotTheRightObject(3);
+            AxeSPRITE.SetActive(true);
+        }
+        else if (number == 4)
+        {
+            Debug.Log("podniesłeś meszete");
+            GameObject.Find("Bushes").GetComponent<InteractionWithObjectScript>().GotTheRightObject(4);
+            MacheteSPRITE.SetActive(true);
         }
     }
 }
