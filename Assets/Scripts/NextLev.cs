@@ -22,14 +22,13 @@ public class NextLev : MonoBehaviour {
     void OnMouseDown()
     {
 
-        
-        NextLevName.SetActive(true);
         ThisLevName.SetActive(false);
-        
-        if(Dodatnie)
-            Time.GetComponentInChildren<Countdown_timer>().MainGameTimer += 30;
+        NextLevName.SetActive(true);
+
+        if (Dodatnie)
+            Time.GetComponentInChildren<Countdown_timer>().MainGameTimer += 10;
         else
-            Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 45;
+            Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 15;
     }
 
 }
