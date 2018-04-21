@@ -61,11 +61,13 @@ public class ObjectsSytemController : MonoBehaviour {
                 Debug.Log("stawiasz pułapkę.");
                 TrapTimeElapsed = Time.time;
                 poszlo = true;
+                TrapSPRITE.SetActive(false);
+                Debug.Log("posszło");
             }
 
             if ( poszlo )
             {
-                Debug.Log("posszło");
+                
                 if ( Time.time - TrapTimeElapsed >= TrapDelayTime )
                 {
                     float x = Random.Range(0f, 2.0f);
@@ -80,7 +82,7 @@ public class ObjectsSytemController : MonoBehaviour {
                     }
                     poszlo = false;
                     BOOL_Trap = false;
-                    TrapSPRITE.SetActive(false);
+                    
                 }
             }
         }
