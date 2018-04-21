@@ -9,15 +9,28 @@ public class NextLev : MonoBehaviour {
 
     public GameObject NextLevName;
     public GameObject ThisLevName;
-    //private GameObject 
+    public bool Dodatnie;
+
+    private GameObject Time;
+
+    void Start()
+    {
+        Time = GameObject.Find("Canvas");
+    }
 
     void OnMouseDown()
     {
 
+        
         NextLevName.SetActive(true);
         ThisLevName.SetActive(false);
         
+        if(Dodatnie)
+            Time.GetComponentInChildren<Countdown_timer>().MainGameTimer += 30;
+        else
+            Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 45;
     }
+
 }
 
 /*

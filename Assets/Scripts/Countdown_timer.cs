@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Countdown_timer : MonoBehaviour {
 
     public float MainGameTimer = 99;
@@ -15,7 +16,14 @@ public class Countdown_timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
         MainGameTimer -= Time.deltaTime;
         timerText.text = MainGameTimer.ToString("f0");
-	}
+        
+    }
+
+    
 }
+
+

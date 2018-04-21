@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &205047900
 Transform:
   m_ObjectHideFlags: 0
@@ -298,8 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevName: {fileID: 0}
-  ThisLevName: {fileID: 0}
+  NextLevName: {fileID: 1792214158}
+  ThisLevName: {fileID: 1792214158}
 --- !u!212 &322512729
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -386,8 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevName: {fileID: 0}
-  ThisLevName: {fileID: 0}
+  NextLevName: {fileID: 205047899}
+  ThisLevName: {fileID: 1161497630}
 --- !u!212 &689904726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -572,8 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevName: {fileID: 0}
-  ThisLevName: {fileID: 0}
+  NextLevName: {fileID: 1161497630}
+  ThisLevName: {fileID: 1792214158}
 --- !u!212 &889493348
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -685,8 +685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevName: {fileID: 0}
-  ThisLevName: {fileID: 0}
+  NextLevName: {fileID: 205047899}
+  ThisLevName: {fileID: 1161497630}
 --- !u!212 &1089871084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevName: {fileID: 1792214158}
-  ThisLevName: {fileID: 0}
+  ThisLevName: {fileID: 1161497630}
 --- !u!212 &1314271176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1358,8 +1358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c616e8ae065103438e7e4ebb76db3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevName: {fileID: 0}
-  ThisLevName: {fileID: 0}
+  NextLevName: {fileID: 1792214158}
+  ThisLevName: {fileID: 205047899}
 --- !u!212 &1637475239
 SpriteRenderer:
   m_ObjectHideFlags: 0
