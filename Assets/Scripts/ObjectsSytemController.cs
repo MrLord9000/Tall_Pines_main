@@ -16,12 +16,16 @@ public class ObjectsSytemController : MonoBehaviour {
     private GameObject MacheteSPRITE;
 
     private float FlashlightTimeElapsed = 0.0f;
-    private float TrapTimeElapsed = -10.0f;
+    private float TrapTimeElapsed = 15.0f;
 
     private bool BOOL_Flashlight = false;
     private bool BOOL_Trap = false;
     private bool BOOL_Axe = false;
     private bool BOOL_Machete = false;
+
+    public float trapTimeBonus = 4.0f;
+
+    public bool poszlo = false;
 
     // Use this for initialization
     void Start ()
@@ -42,7 +46,7 @@ public class ObjectsSytemController : MonoBehaviour {
     {
         if ( BOOL_Flashlight )
         {
-            if ( Time.time - TrapTimeElapsed >= FlashlightTime )
+            if ( Time.time - FlashlightTimeElapsed >= FlashlightTime )
             {
                 Debug.Log("zgasła.");
                 FlashlightSPRITE.SetActive(false);
@@ -56,9 +60,10 @@ public class ObjectsSytemController : MonoBehaviour {
             {
                 Debug.Log("stawiasz pułapkę.");
                 TrapTimeElapsed = Time.time;
+                poszlo = true;
             }
 
-            if ( TrapTimeElapsed > -10.0f )
+            if ( poszlo )
             {
                 Debug.Log("posszło");
                 if ( Time.time - TrapTimeElapsed >= TrapDelayTime )
@@ -67,15 +72,15 @@ public class ObjectsSytemController : MonoBehaviour {
                     if ( x > 1.0f )
                     {
                         Debug.Log("ałaaaa!");
+                        GameObject.Find("Canvas").GetComponentInChildren<Countdown_timer>().MainGameTimer += trapTimeBonus;
                     }
                     else
                     {
                         Debug.Log("pułapka nie poskutkowała.");
                     }
-
+                    poszlo = false;
                     BOOL_Trap = false;
                     TrapSPRITE.SetActive(false);
-                    TrapTimeElapsed = -20.0f;
                 }
             }
         }
@@ -88,7 +93,7 @@ public class ObjectsSytemController : MonoBehaviour {
             BOOL_Flashlight = true;
             Debug.Log("masz przedmiot.latarka świeci");
             FlashlightSPRITE.SetActive(true);
-            TrapTimeElapsed = Time.time;
+            FlashlightTimeElapsed = Time.time;
             GameObject.Find("Canvas").GetComponentInChildren<Countdown_timer>().SetTimeMultiplication(0.9f);
         }
         else if ( number == 2 )
