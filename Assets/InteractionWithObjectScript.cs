@@ -5,8 +5,12 @@ using UnityEngine;
 public class InteractionWithObjectScript : MonoBehaviour {
 
     public int Tree_Bush = 0;
+    public float ExecutionTime = 2.0f;
+
+    private float relTime = 0f;
 
     bool WaitForInteraction = false;
+    bool Chopping = false;
 
     public SpriteRenderer rend;
 	
@@ -15,6 +19,17 @@ public class InteractionWithObjectScript : MonoBehaviour {
     void Start()
     {
         rend.enabled = false;
+    }
+
+    void Update()
+    {
+        if (Chopping && (Time.time - relTime >= ExecutionTime))
+        {
+            rend.enabled = true;
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            Debug.Log("juz");
+            Chopping = false;
+        }
     }
 
     public void GotTheRightObject( int _34axe_machete )
@@ -30,8 +45,9 @@ public class InteractionWithObjectScript : MonoBehaviour {
     {
         if (WaitForInteraction)
         {
-            rend.enabled = true;
-            this.GetComponent<SpriteRenderer>().enabled = false;
+            Chopping = true;
+            relTime = Time.time;
+            Debug.Log("scinam");
         }
     }
 
