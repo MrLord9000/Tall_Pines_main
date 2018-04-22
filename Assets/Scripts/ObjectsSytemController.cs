@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectsSytemController : MonoBehaviour {
 
     private GameObject FlashlightSPRITE;
-    public float FlashlightTime = 2.0f;
+    public float FlashlightTime = 15.0f;
 
     private GameObject TrapSPRITE;
     public float TrapDelayTime = 10.0f;
@@ -14,6 +14,8 @@ public class ObjectsSytemController : MonoBehaviour {
     public int LimitOfUsesAxe = 2;
 
     private GameObject MacheteSPRITE;
+
+    private GameObject Flashlight_cookie;
 
     private float FlashlightTimeElapsed = 0.0f;
     private float TrapTimeElapsed = 15.0f;
@@ -34,7 +36,9 @@ public class ObjectsSytemController : MonoBehaviour {
         TrapSPRITE = GameObject.Find("TrapSPRITE");
         AxeSPRITE = GameObject.Find("AxeSPRITE");
         MacheteSPRITE = GameObject.Find("MacheteSPRITE");
+        Flashlight_cookie = GameObject.Find("Flashlight_cookie");
 
+        Flashlight_cookie.SetActive(false);
         FlashlightSPRITE.SetActive(false);
         TrapSPRITE.SetActive(false);
         AxeSPRITE.SetActive(false);
@@ -48,8 +52,10 @@ public class ObjectsSytemController : MonoBehaviour {
         {
             if ( Time.time - FlashlightTimeElapsed >= FlashlightTime )
             {
+                Debug.Log(Time.time - FlashlightTimeElapsed);
                 Debug.Log("zgasła.");
                 FlashlightSPRITE.SetActive(false);
+                Flashlight_cookie.SetActive(false);
                 BOOL_Flashlight = false;
             }
         }
@@ -95,8 +101,10 @@ public class ObjectsSytemController : MonoBehaviour {
             BOOL_Flashlight = true;
             Debug.Log("masz przedmiot.latarka świeci");
             FlashlightSPRITE.SetActive(true);
+            Flashlight_cookie.SetActive(true);
             FlashlightTimeElapsed = Time.time;
             GameObject.Find("Canvas").GetComponentInChildren<Countdown_timer>().SetTimeMultiplication(0.9f);
+            
         }
         else if ( number == 2 )
         {
