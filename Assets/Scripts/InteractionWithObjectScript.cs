@@ -32,6 +32,7 @@ public class InteractionWithObjectScript : MonoBehaviour {
             Aktywacja.SetActive(true);
             Debug.Log("juz");
             Chopping = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
