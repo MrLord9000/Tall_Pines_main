@@ -30,7 +30,7 @@ public class Countdown_timer : MonoBehaviour {
         //else if(MainGameTimer>=50)
 
         if(MainGameTimer<=0)
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Game Over");
 
         MainGameTimer -= Mult*Time.deltaTime;
         timerText.text = MainGameTimer.ToString("f0");
