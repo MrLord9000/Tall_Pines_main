@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Intro kopia.unity
+    guid: 78ff4b4002df7c14187f423643747d63
+  - enabled: 1
+    path: Assets/_Scenes/Piotrek.unity
+    guid: cf1bec3db2eba5e45a320fc5b2c4de6b
