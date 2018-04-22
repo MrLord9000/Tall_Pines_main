@@ -7,6 +7,6 @@ public class GameOver_restart : MonoBehaviour {
 
 
 	void OnMouseDown () {
-        SceneManager.LoadScene("Piotrek");
+        SceneManager.LoadScene(1);
     }
 }

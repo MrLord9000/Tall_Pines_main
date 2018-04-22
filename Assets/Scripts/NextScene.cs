@@ -7,7 +7,7 @@ public class NextScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        SceneManager.LoadScene("Piotrek");
+        SceneManager.LoadScene(1);
     }
 	
 }

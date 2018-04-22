@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Countdown_timer : MonoBehaviour {
 
@@ -29,7 +30,7 @@ public class Countdown_timer : MonoBehaviour {
         //else if(MainGameTimer>=50)
 
         if(MainGameTimer<=0)
-            GameOver.SetActive(true);
+            SceneManager.LoadScene(2);
 
         MainGameTimer -= Mult*Time.deltaTime;
         timerText.text = MainGameTimer.ToString("f0");
