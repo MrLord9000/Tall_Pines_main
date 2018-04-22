@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &57830336 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212541409407925160, guid: 0044a762cd03a744b8f1e021934b18ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 198858101}
 --- !u!1 &63182096
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,11 +431,16 @@ Prefab:
         type: 2}
       propertyPath: rend
       value: 
-      objectReference: {fileID: 1443062025}
+      objectReference: {fileID: 57830336}
     - target: {fileID: 1702644248687034, guid: 0044a762cd03a744b8f1e021934b18ef, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114916049261857278, guid: 0044a762cd03a744b8f1e021934b18ef,
+        type: 2}
+      propertyPath: Aktywacja
+      value: 
+      objectReference: {fileID: 1414214501}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0044a762cd03a744b8f1e021934b18ef, type: 2}
   m_IsPrefabParent: 0
@@ -1188,7 +1198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevName: {fileID: 205047899}
   ThisLevName: {fileID: 1792214158}
-  Transition: {fileID: 293195161}
   Description: 
   Dodatnie: 1
 --- !u!212 &889493348
@@ -1260,6 +1269,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.589535, y: 5.605898}
   m_EdgeRadius: 0
+--- !u!212 &902652603 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212883558789302886, guid: bf03be64b03eb6f439104c08e3730ec3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1221872348}
 --- !u!1 &1065613774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1576,7 @@ Prefab:
         type: 2}
       propertyPath: rend
       value: 
-      objectReference: {fileID: 1443062025}
+      objectReference: {fileID: 902652603}
     - target: {fileID: 114258104672018492, guid: bf03be64b03eb6f439104c08e3730ec3,
         type: 2}
       propertyPath: next_button
@@ -1572,6 +1586,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114258104672018492, guid: bf03be64b03eb6f439104c08e3730ec3,
+        type: 2}
+      propertyPath: Aktywacja
+      value: 
+      objectReference: {fileID: 1443062024}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf03be64b03eb6f439104c08e3730ec3, type: 2}
   m_IsPrefabParent: 0
@@ -1733,7 +1752,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevName: {fileID: 205047899}
   ThisLevName: {fileID: 1792214158}
-  Transition: {fileID: 0}
   Description: 
   Dodatnie: 1
 --- !u!61 &1414214505
@@ -1764,11 +1782,6 @@ BoxCollider2D:
 --- !u!1 &1443062024 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1350929645131838, guid: 7bc0e0acec5f43d40a922feac2d5d9cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 213221827}
---- !u!212 &1443062025 stripped
-SpriteRenderer:
-  m_PrefabParentObject: {fileID: 212200003800432876, guid: 7bc0e0acec5f43d40a922feac2d5d9cf,
     type: 2}
   m_PrefabInternal: {fileID: 213221827}
 --- !u!1 &1444156739
@@ -2507,7 +2520,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevName: {fileID: 0}
   ThisLevName: {fileID: 0}
-  Transition: {fileID: 0}
   Description: 
   Dodatnie: 1
 --- !u!212 &1637475239

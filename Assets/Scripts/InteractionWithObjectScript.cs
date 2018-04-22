@@ -12,21 +12,24 @@ public class InteractionWithObjectScript : MonoBehaviour {
     bool WaitForInteraction = false;
     bool Chopping = false;
 
+    public GameObject Aktywacja;
     public SpriteRenderer rend;
 	
 	// Update is called once per frame
 
     void Start()
     {
-        rend.enabled = false;
+        Aktywacja.SetActive(false);
+        rend.enabled = true;
     }
 
     void Update()
     {
         if (Chopping && (Time.time - relTime >= ExecutionTime))
         {
-            rend.enabled = true;
+            rend.enabled = false;
             this.GetComponent<SpriteRenderer>().enabled = false;
+            Aktywacja.SetActive(true);
             Debug.Log("juz");
             Chopping = false;
         }
