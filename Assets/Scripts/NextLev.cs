@@ -5,25 +5,34 @@ using UnityEngine;
 
 
 
-public class NextLev : MonoBehaviour {
+public class NextLev : MonoBehaviour
+{
 
     public GameObject NextLevName;
     public GameObject ThisLevName;
+    public GameObject Transition;
+    public string Description;
 
     public bool Dodatnie;
+    private float czas;
 
     private GameObject Time;
 
     void Start()
     {
         Time = GameObject.Find("Canvas");
+        Transition = GameObject.Find("Czarne");
     }
 
     void OnMouseDown()
     {
+        //czas = Time.GetComponentInChildren<Countdown_timer>().MainGameTimer;
+        Transition.SetActive(true);
+        print("uwaga!");
+        StartCoroutine(WaitForPlay(0.5f));
 
-        ThisLevName.SetActive(false);
-        NextLevName.SetActive(true);
+            
+
 
         if (Dodatnie)
             Time.GetComponentInChildren<Countdown_timer>().MainGameTimer += 10;
@@ -31,7 +40,16 @@ public class NextLev : MonoBehaviour {
             Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 15;
     }
 
+    IEnumerator WaitForPlay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        ThisLevName.SetActive(false);
+        NextLevName.SetActive(true);
+        print("Odczekane 0.5sek");
+    }
+
 }
+
 
 /*
 public class NextLev : MonoBehaviour
