@@ -12,6 +12,7 @@ public class ObjectsSytemController : MonoBehaviour {
 
     private GameObject AxeSPRITE;
     public int LimitOfUsesAxe = 2;
+    public int ActualUses = 0;
 
     private GameObject MacheteSPRITE;
 
@@ -20,10 +21,10 @@ public class ObjectsSytemController : MonoBehaviour {
     private float FlashlightTimeElapsed = 0.0f;
     private float TrapTimeElapsed = 15.0f;
 
-    private bool BOOL_Flashlight = false;
-    private bool BOOL_Trap = false;
-    private bool BOOL_Axe = false;
-    private bool BOOL_Machete = false;
+    public bool BOOL_Flashlight = false;
+    public bool BOOL_Trap = false;
+    public bool BOOL_Axe = false;
+    public bool BOOL_Machete = false;
 
     public float trapTimeBonus = 4.0f;
 
@@ -114,14 +115,16 @@ public class ObjectsSytemController : MonoBehaviour {
         }
         else if ( number == 3 )
         {
+            BOOL_Axe = true;
             Debug.Log("podniesłeś sikire");
-            GameObject.Find("LyingTree").GetComponent<InteractionWithObjectScript>().GotTheRightObject(3);
+            //GameObject.Find("LyingTree").GetComponent<InteractionWithObjectScript>().GotTheRightObject(3);
             AxeSPRITE.SetActive(true);
         }
         else if (number == 4)
         {
+            BOOL_Machete = true;
             Debug.Log("podniesłeś meszete");
-            GameObject.Find("Bushes").GetComponent<InteractionWithObjectScript>().GotTheRightObject(4);
+            //GameObject.Find("Bushes").GetComponent<InteractionWithObjectScript>().GotTheRightObject(4);
             MacheteSPRITE.SetActive(true);
         }
     }

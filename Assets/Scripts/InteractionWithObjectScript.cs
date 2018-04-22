@@ -12,6 +12,9 @@ public class InteractionWithObjectScript : MonoBehaviour {
     bool WaitForInteraction = false;
     bool Chopping = false;
 
+    private bool Axe_Bool = false;
+    private bool Machete_Bool = false;
+
     public GameObject Aktywacja;
     public SpriteRenderer rend;
 	
@@ -21,10 +24,24 @@ public class InteractionWithObjectScript : MonoBehaviour {
     {
         Aktywacja.SetActive(false);
         rend.enabled = true;
+        relTime = 0f;
     }
 
     void Update()
     {
+        if ( GameObject.Find("GameObjectsController").GetComponent<ObjectsSytemController>().BOOL_Axe && Tree_Bush == 1 )
+        {
+            Axe_Bool = true;
+            WaitForInteraction = true;
+        }
+
+        if (GameObject.Find("GameObjectsController").GetComponent<ObjectsSytemController>().BOOL_Machete && Tree_Bush == 2 )
+        {
+            Machete_Bool = true;
+            WaitForInteraction = true;
+        }
+
+
         if (Chopping && (Time.time - relTime >= ExecutionTime))
         {
             rend.enabled = false;
@@ -36,17 +53,11 @@ public class InteractionWithObjectScript : MonoBehaviour {
         }
     }
 
-    public void GotTheRightObject( int _34axe_machete )
-    {
-        if (_34axe_machete == 3 && Tree_Bush == 1 || _34axe_machete == 4 && Tree_Bush == 2)
-        {
-            WaitForInteraction = true;
-        }
-
-    }
-
     void OnMouseDown()
     {
+        Debug.Log("onmousedown");
+        if (!WaitForInteraction)
+            Debug.Log("wait");
         if (WaitForInteraction)
         {
             Chopping = true;
