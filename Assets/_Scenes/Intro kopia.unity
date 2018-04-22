@@ -640,6 +640,7 @@ GameObject:
   - component: {fileID: 1518858399}
   - component: {fileID: 1518858398}
   - component: {fileID: 1518858400}
+  - component: {fileID: 1518858401}
   m_Layer: 0
   m_Name: Intro
   m_TagString: Untagged
@@ -725,6 +726,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1518858401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518858397}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ecda74e8516404c8a26c855aaaf2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1911988958
 GameObject:
   m_ObjectHideFlags: 0
