@@ -18,18 +18,40 @@ public class NextLev : MonoBehaviour
 
     private GameObject Time;
 
+    int TimeOfAnimation;
+    bool Flag;
+
     void Start()
     {
         Time = GameObject.Find("Canvas");
-
+        Flag = false;
+        TimeOfAnimation = 0;
     }
+
+    
+    void FixedUpdate()
+    {
+        if (TimeOfAnimation > 0)
+        {
+            TimeOfAnimation--;
+        }
+
+        else if (Flag == true)
+        {
+            Flag = false;
+            NextLevName.SetActive(true);
+            ThisLevName.SetActive(false);
+        }
+    }
+    
 
     void OnMouseDown()
     {
-        NextLevName.SetActive(true);
-        ThisLevName.SetActive(false);
-            
+        Flag = true;
+        TimeOfAnimation = 25;
 
+     //   ThisLevName.SetActive(false);
+       // NextLevName.SetActive(true);
 
         if (Dodatnie)
             Time.GetComponentInChildren<Countdown_timer>().MainGameTimer += 10;

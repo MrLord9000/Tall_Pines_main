@@ -16,14 +16,12 @@ public class Blink : MonoBehaviour {
 
 	void Update () {
         kropka.SetActive(change);
-        change = !change;
+        //change = !change;
         //yield WaitForSeconds(2);
 
 
-        if ( (int)time.GetComponentInChildren<Countdown_timer>().MainGameTimer % 2 == 0)
-        {
-            if (change) change = false;
-            else change = true;
-        }
+        if ( time.GetComponentInChildren<Countdown_timer>().MainGameTimer % 4 < 2)
+            change = false;
+        else change = true;
     }
 }

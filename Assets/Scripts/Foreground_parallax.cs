@@ -10,10 +10,10 @@ public class Foreground_parallax : MonoBehaviour {
 
     private Transform Tr;
     private Vector3 MouseMov;
+    private Vector3 MousePos;
 
     float x;
     float y;
-   // float z;
 
     private void Start()
     {
@@ -22,10 +22,21 @@ public class Foreground_parallax : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-       x = Input.GetAxis("Mouse X");
+        x = Input.GetAxis("Mouse X");
         y = Input.GetAxis("Mouse Y");
-        MouseMov = new Vector3(-x * XParallaxMultipler, -y * YParallaxMultipler, 0);
+        MousePos=Input.mousePosition;
 
-        Tr.position = MouseMov + Tr.position;
+        if (MousePos.x >= 0 && MousePos.y <= Screen.width)
+        {
+            MouseMov = new Vector3(-x * XParallaxMultipler, 0,0);
+            Tr.position = MouseMov + Tr.position;
+        }
+
+        if (MousePos.y >= 0 && MousePos.y <= Screen.height)
+        {
+            MouseMov = new Vector3(0, -y * YParallaxMultipler, 0);
+            Tr.position = MouseMov + Tr.position;
+        }
+        
     }
 }

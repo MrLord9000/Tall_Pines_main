@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractionWithObjectScript : MonoBehaviour {
 
     public int Tree_Bush = 0;
-    public float ExecutionTime = 2.0f;
+    public float ExecutionTime = 6.0f;
 
     private float relTime = 0f;
 
@@ -17,11 +17,15 @@ public class InteractionWithObjectScript : MonoBehaviour {
 
     public GameObject Aktywacja;
     public SpriteRenderer rend;
+
+    private AudioSource audio;
+    public GameObject particles;
 	
 	// Update is called once per frame
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         Aktywacja.SetActive(false);
         rend.enabled = true;
         relTime = 0f;
@@ -48,6 +52,8 @@ public class InteractionWithObjectScript : MonoBehaviour {
             this.GetComponent<SpriteRenderer>().enabled = false;
             Aktywacja.SetActive(true);
             Debug.Log("juz");
+            audio.Stop();
+            particles.SetActive(false);
             Chopping = false;
             GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -60,6 +66,8 @@ public class InteractionWithObjectScript : MonoBehaviour {
             Debug.Log("wait");
         if (WaitForInteraction)
         {
+            particles.SetActive(true);
+            audio.Play();
             Chopping = true;
             relTime = Time.time;
             Debug.Log("scinam");
