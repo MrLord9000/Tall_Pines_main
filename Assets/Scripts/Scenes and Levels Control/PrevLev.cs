@@ -14,26 +14,30 @@ public class PrevLev : MonoBehaviour {
     public GameObject prevScene;
     public GameObject currentScene;
 
-    private GameObject Time;
+    private GameObject GTime;
 
-    int TimeOfAnimation;
-    bool Flag;
+    private float TimeOfAnimation;
+    private bool Done;
 
     void Start()
     {
-        Time = GameObject.Find("Canvas");
-        Flag = false;
-        TimeOfAnimation = 0;
+        GTime = GameObject.Find("Canvas");
+        Done = true;
+        TimeOfAnimation = 0.5f;
     }
 
     void FixedUpdate()
     {
-        if (TimeOfAnimation > 0)
-            TimeOfAnimation--;
-        if (TimeOfAnimation <= 0 && Flag == true)
+        if (!Done && TimeOfAnimation >= 0)
+            TimeOfAnimation = TimeOfAnimation - Time.deltaTime;
+        else if (!Done && TimeOfAnimation < 0)
         {
-            Flag = false;
             
+
+            GTime.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 15;
+
+            Done = true;
+            TimeOfAnimation = 0.5f;
             currentScene.SetActive(false);
             prevScene.SetActive(true);
         }
@@ -41,21 +45,16 @@ public class PrevLev : MonoBehaviour {
 
     void OnMouseDown()
         {
-        Time.GetComponentInChildren<Countdown_timer>().MainGameTimer -= 15;
         currentSprite.sprite = buttonPressed;
-
-        Flag = true;
-        TimeOfAnimation = 25;
-
-        Debug.Log("Naciśnięto");
-        }
-
+        Done = false;
+    }
+    /*
         void OnMouseUp()
         {
         currentScene.SetActive(false);
         prevScene.SetActive(true);
         }
-
+        */
         void OnMouseEnter()
         {
 

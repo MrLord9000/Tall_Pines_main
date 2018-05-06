@@ -26,7 +26,8 @@ public class InteractionWithObjectScript : MonoBehaviour {
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        Aktywacja.SetActive(false);
+        if(Aktywacja != null)
+            Aktywacja.SetActive(false);
         rend.enabled = true;
         relTime = 0f;
     }
